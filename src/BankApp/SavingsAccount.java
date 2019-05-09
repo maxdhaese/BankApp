@@ -1,4 +1,10 @@
 package BankApp;
 
-public class SavingsAccount {
+public class SavingsAccount extends Account {
+
+    public SavingsAccount(){
+
+    }
+
+
 }

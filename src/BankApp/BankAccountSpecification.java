@@ -2,7 +2,16 @@ package BankApp;
 
 public interface BankAccountSpecification {
 
-    public void
+    void withdraw(double withdraw);
+    void deposit(double deposit);
+
+    double getMonthlyInterestRate();
+    double getMonthlyInterest();
+
+
+
+
+
 
 
 }
