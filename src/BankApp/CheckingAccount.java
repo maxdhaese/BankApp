@@ -5,8 +5,7 @@ public class CheckingAccount extends Account {
     private double overDraftLimit;
 
 
-
-    public CheckingAccount(){
+    public CheckingAccount() {
 
     }
 
@@ -17,14 +16,20 @@ public class CheckingAccount extends Account {
 
     @Override
     public void withdraw(double amount) {
-        super.withdraw(amount);
+        double balance = getBalance();
+        if ((balance + overDraftLimit) >= amount) {
+            setBalance(balance - amount);
+        }else
+            System.out.println("Not enough funds");
+
+
     }
 
-    public  double getOverDraftLimit() {
-        return getOverDraftLimit();
+    public double getOverDraftLimit() {
+        return overDraftLimit;
     }
 
-    public  void setOverDraftLimit(double overDraftLimit) {
+    public void setOverDraftLimit(double overDraftLimit) {
         this.overDraftLimit = overDraftLimit;
     }
 

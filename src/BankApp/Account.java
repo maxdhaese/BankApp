@@ -11,13 +11,16 @@ public class Account implements BankAccountSpecification {
 
 
     public Account(){
+        this.dateCreated = LocalDate.now();
 
     }
 
     public Account(int id, double balance) {
+        this.dateCreated = LocalDate.now();
         this.id = id;
         this.balance = balance;
     }
+
 
     public double getAnnualInterestRate() {
         return annualInterestRate;
@@ -51,7 +54,7 @@ public class Account implements BankAccountSpecification {
 
     @Override
     public void withdraw(double amount) {
-        
+
     }
 
     @Override
