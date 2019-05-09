@@ -6,7 +6,7 @@ public class Account implements BankAccountSpecification {
 
     private int id = 0;
     private double balance = 0.0;
-    private static double annualInterestRate = 0.0;
+    private static double annualInterestRate = 2.50;
     private LocalDate dateCreated;
 
 

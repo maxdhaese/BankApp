@@ -7,26 +7,32 @@ public class User extends Account {
     private String Address;
     private String PhoneNr;
     private String eMail;
+    CheckingAccount checkingAccount;
+    SavingsAccount savingsAccount;
 
     public User(){
 
     }
 
-    public User(int id, String name, String address, String phoneNr, String eMail) {
+    public User(int id, String name, String address, String phoneNr, String eMail, CheckingAccount checkingAccount, SavingsAccount savingsAccount) {
         this.id = id;
         this.name = name;
         Address = address;
         PhoneNr = phoneNr;
         this.eMail = eMail;
+        this.checkingAccount = checkingAccount;
+        this.savingsAccount = savingsAccount;
     }
 
-    public User(int id, double balance, String name, String address, String phoneNr, String eMail) {
+    public User(int id, double balance, int id1, String name, String address, String phoneNr, String eMail, CheckingAccount checkingAccount, SavingsAccount savingsAccount) {
         super(id, balance);
+        this.id = id1;
         this.name = name;
         Address = address;
         PhoneNr = phoneNr;
         this.eMail = eMail;
-
+        this.checkingAccount = checkingAccount;
+        this.savingsAccount = savingsAccount;
     }
 
     @Override
@@ -71,5 +77,16 @@ public class User extends Account {
         this.eMail = eMail;
     }
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", Address='" + Address + '\'' +
+                ", PhoneNr='" + PhoneNr + '\'' +
+                ", eMail='" + eMail + '\'' +
+                ", checkingAccount=" + checkingAccount +
+                ", savingsAccount=" + savingsAccount +
+                '}';
+    }
 }

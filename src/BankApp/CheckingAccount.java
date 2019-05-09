@@ -35,8 +35,6 @@ public class CheckingAccount extends Account {
 
     @Override
     public String toString() {
-        return super.toString() + "CheckingAccount{" +
-                "overDraftLimit=" + overDraftLimit +
-                '}';
+        return super.toString();
     }
 }
