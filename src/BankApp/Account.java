@@ -28,10 +28,6 @@ public class Account implements BankAccountSpecification {
         Account.annualInterestRate = annualInterestRate;
     }
 
-    public LocalDate getDateCreated() {
-        return dateCreated;
-    }
-
     public double getBalance() {
         return balance;
     }
@@ -39,6 +35,7 @@ public class Account implements BankAccountSpecification {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+
 
     public int getId() {
         return id;
@@ -48,8 +45,12 @@ public class Account implements BankAccountSpecification {
         this.id = id;
     }
 
+    public LocalDate getDateCreated() {
+        return dateCreated;
+    }
+
     @Override
-    public void withdraw(double withdraw) {
+    public abstract void withdraw(double withdraw) {
 
     }
 
