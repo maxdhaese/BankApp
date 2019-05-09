@@ -35,6 +35,6 @@ public class CheckingAccount extends Account {
 
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() + String.format("\nCheckingAccountId: %d%n\t-Balance: €%.2f%n\t-OverDraftLimit: €%.2f",getId(),getBalance(),overDraftLimit);
     }
 }

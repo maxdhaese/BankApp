@@ -79,14 +79,8 @@ public class User extends Account {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", Address='" + Address + '\'' +
-                ", PhoneNr='" + PhoneNr + '\'' +
-                ", eMail='" + eMail + '\'' +
-                ", checkingAccount=" + checkingAccount +
-                ", savingsAccount=" + savingsAccount +
-                '}';
+        return String.format("Name:%s%n\t-Id:%d%n\t-Address:%s%n\t-PhoneNr:%s%n\t-E-mail:%s%n", getName(), id, Address, PhoneNr,eMail);
+
+
     }
 }

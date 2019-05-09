@@ -23,4 +23,9 @@ public class SavingsAccount extends Account {
             System.out.println("Not enough funds");
 
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + String.format("\nSavingsAccountId: %d%n\t-Balance: €%.2f",getId(),getBalance());
+    }
 }

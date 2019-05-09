@@ -1,13 +1,14 @@
 package BankApp;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Account implements BankAccountSpecification {
 
     private int id = 0;
     private double balance = 0.0;
     private static double annualInterestRate = 2.50;
-    private LocalDate dateCreated;
+    private LocalDate dateCreated = LocalDate.now();
 
 
     public Account(){
@@ -47,8 +48,9 @@ public class Account implements BankAccountSpecification {
         this.id = id;
     }
 
-    public LocalDate getDateCreated() {
-        return dateCreated;
+    public String getDateCreated() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy") ;
+        return formatter.format(dateCreated);
     }
 
 
@@ -75,10 +77,8 @@ public class Account implements BankAccountSpecification {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "id=" + id +
-                ", balance=" + balance +
-                ", dateCreated=" + dateCreated +
-                '}';
+        return String.format("AccountId:%d%n\t-Date Created: %s",id,getDateCreated());
+
+
     }
 }
