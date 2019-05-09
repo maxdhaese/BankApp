@@ -4,10 +4,9 @@ import java.time.LocalDate;
 
 public class Account implements BankAccountSpecification {
 
-    private int id;
-    private double balance;
-
-    private static double annualInterestRate;
+    private int id = 0;
+    private double balance = 0.0;
+    private static double annualInterestRate = 0.0;
     private LocalDate dateCreated;
 
 
@@ -20,11 +19,11 @@ public class Account implements BankAccountSpecification {
         this.balance = balance;
     }
 
-    public static double getAnnualInterestRate() {
+    public double getAnnualInterestRate() {
         return annualInterestRate;
     }
 
-    public static void setAnnualInterestRate(double annualInterestRate) {
+    public void setAnnualInterestRate(double annualInterestRate) {
         Account.annualInterestRate = annualInterestRate;
     }
 
@@ -49,25 +48,34 @@ public class Account implements BankAccountSpecification {
         return dateCreated;
     }
 
-    @Override
-    public abstract void withdraw(double withdraw) {
 
+    @Override
+    public void withdraw(double amount) {
+        
     }
 
     @Override
-    public void deposit(double deposit) {
+    public void deposit(double amount) {
+        this.balance += amount;
 
     }
 
     @Override
     public double getMonthlyInterestRate() {
-        return 0;
+        return (annualInterestRate / 100) / 12 ;
     }
 
     @Override
     public double getMonthlyInterest() {
-        return 0;
+        return balance * getMonthlyInterestRate() ;
     }
 
-
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", balance=" + balance +
+                ", dateCreated=" + dateCreated +
+                '}';
+    }
 }

@@ -16,8 +16,8 @@ public class CheckingAccount extends Account {
     }
 
     @Override
-    public void withdraw(double withdraw) {
-        super.withdraw(withdraw);
+    public void withdraw(double amount) {
+        super.withdraw(amount);
     }
 
     public  double getOverDraftLimit() {
